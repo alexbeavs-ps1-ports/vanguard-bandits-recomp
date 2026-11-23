@@ -1,0 +1,98 @@
+{
+  "format_version": 1,
+  "id": "vanguard-bandits-psx",
+  "name": "Vanguard Bandits",
+  "kind": "recomp",
+  "platform": "psx",
+  "source_repo": "vanguard-bandits-recomp",
+  "rom_identity": {
+    "crc32": [
+      "fa90ca39"
+    ],
+    "md5": [
+      "54770993a8668ea2b6ce288125219c68"
+    ],
+    "sha1": [
+      "f23786daec3a2021f938d2a99fc013a517d1b6d2"
+    ],
+    "disc_serials": [
+      "SLUS-01070"
+    ],
+    "sizes": [
+      570973872
+    ],
+    "filenames": [
+      "Vanguard Bandits (USA).cue",
+      "Vanguard Bandits (USA).bin"
+    ],
+    "track_counts": [
+      1
+    ],
+    "disc_fps": [
+      "85c03afe051d9f6a0461764546daeef89d408a5b6326c80dd709705990dc8b31"
+    ],
+    "require_cue": true
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin",
+    ".chd"
+  ],
+  "bios_identity": {
+    "required": true,
+    "name": "SCPH1001.BIN",
+    "profile": "SCPH1001",
+    "crc32": [
+      "37157331"
+    ],
+    "md5": [
+      "924e392ed05558ffdb115408c263dccf"
+    ],
+    "sha1": [
+      "10155d8d6e6e832d6ea66db9bc098321fb5e8ebf"
+    ],
+    "sha256": [
+      "71af94d1e47a68c11e8fdb9f8368040601514a42a5a399cda48c7d3bff1e99d3"
+    ],
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH1001.BIN"
+    ]
+  },
+  "release": {
+    "github": "alexbeavs-ps1-ports/vanguard-bandits-recomp",
+    "allow_prerelease": false,
+    "asset_glob": {
+      "windows-x64": "vanguard-bandits-*-windows-x64.zip",
+      "linux-x64": "vanguard-bandits-*-linux-x64.zip",
+      "macos-arm64": "vanguard-bandits-*-macos-arm64.zip",
+      "macos-x64": "vanguard-bandits-*-macos-x64.zip"
+    }
+  },
+  "launch": {
+    "windows": "vanguard_bandits.exe",
+    "linux": "vanguard_bandits",
+    "macos": "vanguard_bandits"
+  },
+  "build": {
+    "source": {
+      "github": "alexbeavs-ps1-ports/vanguard-bandits-recomp",
+      "ref": ""
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "min_version": "1.0.14"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    }
+  }
+}
